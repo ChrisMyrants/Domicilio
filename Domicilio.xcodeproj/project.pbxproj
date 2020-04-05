@@ -19,6 +19,9 @@
 		83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83EF1D0C2439C04300420C79 /* HomePage.xib */; };
 		83EF1D102439C09100420C79 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D0F2439C09100420C79 /* HomeViewState.swift */; };
 		83EF1D122439C51800420C79 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D112439C51800420C79 /* HomePresenter.swift */; };
+		83EF1D142439C78400420C79 /* HomeTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D132439C78400420C79 /* HomeTableAdapter.swift */; };
+		83EF1D182439C98900420C79 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D162439C98900420C79 /* ActivityTableViewCell.swift */; };
+		83EF1D192439C98900420C79 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83EF1D172439C98900420C79 /* ActivityTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		83EF1D0C2439C04300420C79 /* HomePage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
 		83EF1D0F2439C09100420C79 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		83EF1D112439C51800420C79 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		83EF1D132439C78400420C79 /* HomeTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableAdapter.swift; sourceTree = "<group>"; };
+		83EF1D162439C98900420C79 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		83EF1D172439C98900420C79 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,10 +141,21 @@
 		83EF1D0A2439C00400420C79 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				83EF1D152439C96300420C79 /* Table */,
 				83EF1D0B2439C04300420C79 /* HomePage.swift */,
 				83EF1D0C2439C04300420C79 /* HomePage.xib */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		83EF1D152439C96300420C79 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				83EF1D132439C78400420C79 /* HomeTableAdapter.swift */,
+				83EF1D162439C98900420C79 /* ActivityTableViewCell.swift */,
+				83EF1D172439C98900420C79 /* ActivityTableViewCell.xib */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +254,7 @@
 			files = (
 				83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */,
 				8375534B2438A46100BCF027 /* LaunchScreen.storyboard in Resources */,
+				83EF1D192439C98900420C79 /* ActivityTableViewCell.xib in Resources */,
 				837553482438A46100BCF027 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +274,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8375533F2438A46000BCF027 /* AppDelegate.swift in Sources */,
+				83EF1D142439C78400420C79 /* HomeTableAdapter.swift in Sources */,
 				83EF1D0D2439C04300420C79 /* HomePage.swift in Sources */,
 				837553412438A46000BCF027 /* SceneDelegate.swift in Sources */,
+				83EF1D182439C98900420C79 /* ActivityTableViewCell.swift in Sources */,
 				83EF1D122439C51800420C79 /* HomePresenter.swift in Sources */,
 				83EF1D102439C09100420C79 /* HomeViewState.swift in Sources */,
 			);

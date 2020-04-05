@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="113" id="KGk-i7-Jjw" customClass="ActivityTableViewCell" customModule="Domicilio" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CQc-i1-6UO">
+                        <rect key="frame" x="8" y="8" width="333" height="84"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-ZX-DxX">
+                                <rect key="frame" x="0.0" y="0.0" width="333" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-57-48O">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="63.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="DjB-kW-v8y">
+                                        <rect key="frame" x="42" y="0.0" width="291" height="63.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-yM-Nrk">
+                                                <rect key="frame" x="245" y="0.0" width="46" height="21"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="didTapTelephone:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DdM-kp-ZkQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tK-1L-XxK">
+                                                <rect key="frame" x="245" y="21" width="46" height="21.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="didTapEmail:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6k7-aE-bjK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-yu-dxB">
+                                                <rect key="frame" x="245" y="42.5" width="46" height="21"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="didTapSite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eui-pq-cLZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-z9-aEq">
+                                <rect key="frame" x="0.0" y="63.5" width="333" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CQc-i1-6UO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="3ET-Gm-lUA"/>
+                    <constraint firstAttribute="trailing" secondItem="CQc-i1-6UO" secondAttribute="trailing" constant="8" id="8EY-qQ-afh"/>
+                    <constraint firstItem="CQc-i1-6UO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Bq4-yR-rRg"/>
+                    <constraint firstAttribute="bottom" secondItem="CQc-i1-6UO" secondAttribute="bottom" constant="8" id="bSG-3F-pcM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="emailButton" destination="7tK-1L-XxK" id="kHn-HL-9Fh"/>
+                <outlet property="nameLabel" destination="GcG-57-48O" id="N7t-e2-TxC"/>
+                <outlet property="noteLaabel" destination="iHp-z9-aEq" id="upC-x6-21R"/>
+                <outlet property="siteButton" destination="bBa-yu-dxB" id="GCi-zf-bGQ"/>
+                <outlet property="telephoneButton" destination="RT4-yM-Nrk" id="OLE-eC-84C"/>
+            </connections>
+            <point key="canvasLocation" x="158.69565217391306" y="171.42857142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
