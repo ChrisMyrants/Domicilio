@@ -76,7 +76,7 @@
             <connections>
                 <outlet property="emailButton" destination="7tK-1L-XxK" id="kHn-HL-9Fh"/>
                 <outlet property="nameLabel" destination="GcG-57-48O" id="N7t-e2-TxC"/>
-                <outlet property="noteLaabel" destination="iHp-z9-aEq" id="upC-x6-21R"/>
+                <outlet property="noteLabel" destination="iHp-z9-aEq" id="tzz-DE-Cw7"/>
                 <outlet property="siteButton" destination="bBa-yu-dxB" id="GCi-zf-bGQ"/>
                 <outlet property="telephoneButton" destination="RT4-yM-Nrk" id="OLE-eC-84C"/>
             </connections>

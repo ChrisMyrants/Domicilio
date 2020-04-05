@@ -6,8 +6,13 @@ protocol HomeViewDelegate {
 
 class HomePage: UIViewController {
     var delegate: HomeViewDelegate!
+    private var adapter = HomeTableAdapter()
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            adapter.tableView = tableView
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,5 +22,6 @@ class HomePage: UIViewController {
     
     func update(_ model: HomeViewState) {
         navigationItem.title = model.title
+        adapter.update(model.groupedActivities)
     }
 }

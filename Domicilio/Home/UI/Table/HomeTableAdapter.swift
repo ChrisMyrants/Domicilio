@@ -5,7 +5,9 @@ final class HomeTableAdapter: NSObject {
     weak var tableView: UITableView? {
         didSet {
             tableView?.dataSource = self
-            // TODO: Register cell with identifier "activityTableViewCell"
+            tableView?.register(
+                UINib(nibName: "ActivityTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "activityTableViewCell")
             tableView?.reloadData()
         }
     }
@@ -28,6 +30,22 @@ extension HomeTableAdapter: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fatalError()
+        guard let activity = viewState?[indexPath.section].activities[indexPath.row] else {
+            fatalError("Can't have an out of index here")
+        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "activityTableViewCell") as? ActivityTableViewCell else {
+            let cell = ActivityTableViewCell()
+            cell.update(activity)
+            return cell
+        }
+        
+        cell.update(activity)
+        return cell
+    }
+}
+
+extension HomeTableAdapter: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
     }
 }
