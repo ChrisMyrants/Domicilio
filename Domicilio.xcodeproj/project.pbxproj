@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		8375533F2438A46000BCF027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375533E2438A46000BCF027 /* AppDelegate.swift */; };
 		837553412438A46000BCF027 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837553402438A46000BCF027 /* SceneDelegate.swift */; };
-		837553432438A46000BCF027 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837553422438A46000BCF027 /* HomePage.swift */; };
 		837553482438A46100BCF027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837553472438A46100BCF027 /* Assets.xcassets */; };
 		8375534B2438A46100BCF027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 837553492438A46100BCF027 /* LaunchScreen.storyboard */; };
 		8375535B2438CB1E00BCF027 /* DomicilioKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 837553592438CB1E00BCF027 /* DomicilioKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8375535E2438CB1E00BCF027 /* DomicilioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837553572438CB1E00BCF027 /* DomicilioKit.framework */; };
 		8375535F2438CB1E00BCF027 /* DomicilioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 837553572438CB1E00BCF027 /* DomicilioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		837553652438CB3B00BCF027 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837553642438CB3B00BCF027 /* Activity.swift */; };
+		83EF1D0D2439C04300420C79 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D0B2439C04300420C79 /* HomePage.swift */; };
+		83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83EF1D0C2439C04300420C79 /* HomePage.xib */; };
+		83EF1D102439C09100420C79 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D0F2439C09100420C79 /* HomeViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		8375533B2438A46000BCF027 /* Domicilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domicilio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8375533E2438A46000BCF027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		837553402438A46000BCF027 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		837553422438A46000BCF027 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		837553472438A46100BCF027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8375534A2438A46100BCF027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8375534C2438A46100BCF027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +55,9 @@
 		837553592438CB1E00BCF027 /* DomicilioKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomicilioKit.h; sourceTree = "<group>"; };
 		8375535A2438CB1E00BCF027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837553642438CB3B00BCF027 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		83EF1D0B2439C04300420C79 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		83EF1D0C2439C04300420C79 /* HomePage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
+		83EF1D0F2439C09100420C79 /* HomeViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +100,9 @@
 		8375533D2438A46000BCF027 /* Domicilio */ = {
 			isa = PBXGroup;
 			children = (
+				83EF1D092439BFF600420C79 /* Home */,
 				8375533E2438A46000BCF027 /* AppDelegate.swift */,
 				837553402438A46000BCF027 /* SceneDelegate.swift */,
-				837553422438A46000BCF027 /* HomePage.swift */,
 				837553472438A46100BCF027 /* Assets.xcassets */,
 				837553492438A46100BCF027 /* LaunchScreen.storyboard */,
 				8375534C2438A46100BCF027 /* Info.plist */,
@@ -114,6 +118,24 @@
 				837553642438CB3B00BCF027 /* Activity.swift */,
 			);
 			path = DomicilioKit;
+			sourceTree = "<group>";
+		};
+		83EF1D092439BFF600420C79 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				83EF1D0A2439C00400420C79 /* UI */,
+				83EF1D0F2439C09100420C79 /* HomeViewState.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		83EF1D0A2439C00400420C79 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				83EF1D0B2439C04300420C79 /* HomePage.swift */,
+				83EF1D0C2439C04300420C79 /* HomePage.xib */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */,
 				8375534B2438A46100BCF027 /* LaunchScreen.storyboard in Resources */,
 				837553482438A46100BCF027 /* Assets.xcassets in Resources */,
 			);
@@ -229,9 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				837553432438A46000BCF027 /* HomePage.swift in Sources */,
 				8375533F2438A46000BCF027 /* AppDelegate.swift in Sources */,
+				83EF1D0D2439C04300420C79 /* HomePage.swift in Sources */,
 				837553412438A46000BCF027 /* SceneDelegate.swift in Sources */,
+				83EF1D102439C09100420C79 /* HomeViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
