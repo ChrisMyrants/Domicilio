@@ -1,14 +1,19 @@
 import UIKit
 
-class HomePage: UIViewController {
+protocol HomeViewDelegate {
+    func didLoad()
+}
 
+class HomePage: UIViewController {
+    var delegate: HomeViewDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        delegate.didLoad()
     }
     
     
     func update(_ model: HomeViewState) {
-        navigationController?.title = model.title
+        navigationItem.title = model.title
     }
 }
