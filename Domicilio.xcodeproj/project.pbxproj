@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830991942439EA7900FCEAD9 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830991932439EA7900FCEAD9 /* NetworkingService.swift */; };
 		8375533F2438A46000BCF027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375533E2438A46000BCF027 /* AppDelegate.swift */; };
 		837553412438A46000BCF027 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837553402438A46000BCF027 /* SceneDelegate.swift */; };
 		837553482438A46100BCF027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 837553472438A46100BCF027 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		830991932439EA7900FCEAD9 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		8375533B2438A46000BCF027 /* Domicilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domicilio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8375533E2438A46000BCF027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		837553402438A46000BCF027 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		830991912439EA1D00FCEAD9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83EF1D0F2439C09100420C79 /* HomeViewState.swift */,
+				83EF1D0A2439C00400420C79 /* UI */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		830991922439EA4E00FCEAD9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				83EF1D112439C51800420C79 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		837553322438A46000BCF027 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +133,7 @@
 				837553472438A46100BCF027 /* Assets.xcassets */,
 				837553492438A46100BCF027 /* LaunchScreen.storyboard */,
 				8375534C2438A46100BCF027 /* Info.plist */,
+				830991932439EA7900FCEAD9 /* NetworkingService.swift */,
 			);
 			path = Domicilio;
 			sourceTree = "<group>";
@@ -131,9 +151,8 @@
 		83EF1D092439BFF600420C79 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				83EF1D0A2439C00400420C79 /* UI */,
-				83EF1D0F2439C09100420C79 /* HomeViewState.swift */,
-				83EF1D112439C51800420C79 /* HomePresenter.swift */,
+				830991922439EA4E00FCEAD9 /* Presenter */,
+				830991912439EA1D00FCEAD9 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -276,6 +295,7 @@
 				8375533F2438A46000BCF027 /* AppDelegate.swift in Sources */,
 				83EF1D142439C78400420C79 /* HomeTableAdapter.swift in Sources */,
 				83EF1D0D2439C04300420C79 /* HomePage.swift in Sources */,
+				830991942439EA7900FCEAD9 /* NetworkingService.swift in Sources */,
 				837553412438A46000BCF027 /* SceneDelegate.swift in Sources */,
 				83EF1D182439C98900420C79 /* ActivityTableViewCell.swift in Sources */,
 				83EF1D122439C51800420C79 /* HomePresenter.swift in Sources */,
