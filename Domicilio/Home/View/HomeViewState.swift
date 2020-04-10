@@ -12,9 +12,9 @@ struct HomeViewState: Equatable {
     
     struct Activity: Equatable {
         var name: String
-        var tel: String?
-        var mail: String?
-        var site: URL?
+        var tel: [String]?
+        var mail: [String]?
+        var site: [URL]?
         var note: String?
     }
 }
@@ -29,9 +29,9 @@ extension HomeViewState {
                 activities: [
                     Activity(
                         name: "NBA",
-                        tel: "3331231231",
-                        mail: "info@nba.com",
-                        site: URL(string: "https://www.nba.com")!,
+                        tel: ["3331231231"],
+                        mail: ["info@nba.com"],
+                        site: [URL(string: "https://www.nba.com")!],
                         note: "Best sport and company in the world")
             ])
     ])

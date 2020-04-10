@@ -4,28 +4,41 @@ class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var telephoneButton: UIButton!
-    @IBOutlet weak var emailButton: UIButton!
-    @IBOutlet weak var siteButton: UIButton!
+    @IBOutlet weak var tel1Button: UIButton! {
+        didSet {
+            UIButton.toTelephoneButton(from: tel1Button)
+        }
+    }
+    @IBOutlet weak var tel2Button: UIButton!{
+        didSet {
+            UIButton.toTelephoneButton(from: tel2Button)
+        }
+    }
+    @IBOutlet weak var tel3Button: UIButton!{
+        didSet {
+            UIButton.toTelephoneButton(from: tel3Button)
+        }
+    }
     
-    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var mail1Button: UIButton!
+    @IBOutlet weak var mail2Button: UIButton!
+    @IBOutlet weak var mail3Button: UIButton!
     
-    @IBAction func didTapTelephone(_ sender: Any) {
-    }
-    @IBAction func didTapEmail(_ sender: Any) {
-    }
-    @IBAction func didTapSite(_ sender: Any) {
-    }
+    @IBOutlet weak var site1Button: UIButton!
+    @IBOutlet weak var site2Button: UIButton!
+    @IBOutlet weak var site3Button: UIButton!
 }
 
 extension ActivityTableViewCell {
     func update(_ model: HomeViewState.Activity) {
         nameLabel.text = model.name
-        
-        telephoneButton.titleLabel?.text = model.tel
-        emailButton.titleLabel?.text = model.mail
-        siteButton.titleLabel?.text = model.site?.absoluteString
-        
-        noteLabel.text = model.note
+    }
+}
+
+extension UIButton {
+    static func toTelephoneButton(from button: UIButton) {
+        button.backgroundColor = .green
+        button.setTitle("📞", for: .normal)
+        button.layer.cornerRadius = 10
     }
 }

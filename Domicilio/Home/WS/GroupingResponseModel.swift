@@ -1,4 +1,4 @@
-struct Grouping: Decodable {
+struct GroupingResponseModel: Decodable {
     let groups: [Group]
     
     init(groups: [Group]) {
@@ -34,7 +34,7 @@ struct Grouping: Decodable {
     }
 }
 
-extension Grouping {
+extension GroupingResponseModel {
     struct GroupKey: CodingKey {
         var stringValue: String
         init?(stringValue: String) {

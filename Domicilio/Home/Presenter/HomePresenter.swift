@@ -23,7 +23,7 @@ extension HomePresenter: HomeViewDelegate {
         networkingService.call(url) { result in
             guard
                 case let .success(data) = result,
-                let model = try? JSONDecoder().decode(Grouping.self, from: data)
+                let model = try? JSONDecoder().decode(GroupingResponseModel.self, from: data)
                 else { return }
             
             let homeViewState = HomeViewState(
