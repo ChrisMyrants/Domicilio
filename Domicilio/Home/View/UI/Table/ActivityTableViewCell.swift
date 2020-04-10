@@ -9,24 +9,54 @@ class ActivityTableViewCell: UITableViewCell {
             UIButton.toTelephoneButton(from: tel1Button)
         }
     }
+    
     @IBOutlet weak var tel2Button: UIButton!{
         didSet {
             UIButton.toTelephoneButton(from: tel2Button)
         }
     }
+    
     @IBOutlet weak var tel3Button: UIButton!{
         didSet {
             UIButton.toTelephoneButton(from: tel3Button)
         }
     }
     
-    @IBOutlet weak var mail1Button: UIButton!
-    @IBOutlet weak var mail2Button: UIButton!
-    @IBOutlet weak var mail3Button: UIButton!
+    @IBOutlet weak var mail1Button: UIButton! {
+        didSet {
+            UIButton.toMailButton(from: mail1Button)
+        }
+    }
     
-    @IBOutlet weak var site1Button: UIButton!
-    @IBOutlet weak var site2Button: UIButton!
-    @IBOutlet weak var site3Button: UIButton!
+    @IBOutlet weak var mail2Button: UIButton! {
+        didSet {
+            UIButton.toMailButton(from: mail2Button)
+        }
+    }
+    
+    @IBOutlet weak var mail3Button: UIButton! {
+        didSet {
+            UIButton.toMailButton(from: mail3Button)
+        }
+    }
+    
+    @IBOutlet weak var site1Button: UIButton! {
+        didSet {
+            UIButton.toSiteButton(from: site1Button)
+        }
+    }
+    
+    @IBOutlet weak var site2Button: UIButton!  {
+           didSet {
+               UIButton.toSiteButton(from: site2Button)
+           }
+       }
+    
+    @IBOutlet weak var site3Button: UIButton! {
+           didSet {
+               UIButton.toSiteButton(from: site3Button)
+           }
+       }
 }
 
 extension ActivityTableViewCell {
@@ -35,10 +65,4 @@ extension ActivityTableViewCell {
     }
 }
 
-extension UIButton {
-    static func toTelephoneButton(from button: UIButton) {
-        button.backgroundColor = .green
-        button.setTitle("📞", for: .normal)
-        button.layer.cornerRadius = 10
-    }
-}
+
