@@ -16,6 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = rootController
         window?.makeKeyAndVisible()
         
-        homePresenter = HomePresenter(rootNavigationController: rootController, homePage: homePage)
+        homePresenter = HomePresenter(rootNavigationController: rootController, homePage: homePage, networkingService: NetworkingService())
     }
 }
