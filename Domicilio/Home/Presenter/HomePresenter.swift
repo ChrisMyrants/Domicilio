@@ -35,9 +35,9 @@ extension HomePresenter: HomeViewDelegate {
                         activities: $0.activities.map { activity in
                             HomeViewState.Activity(
                                 name: activity.name,
-                                tel: nil,
-                                mail: nil,
-                                site: nil,
+                                tel: activity.tel.map { $0.toArray() },
+                                mail: activity.mail.map { $0.toArray() },
+                                site: activity.site.map { $0.toArray() }?.compactMap { URL(string: $0) },
                                 note: nil) })
             })
             

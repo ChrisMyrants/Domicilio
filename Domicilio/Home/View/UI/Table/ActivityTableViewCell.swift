@@ -62,6 +62,18 @@ class ActivityTableViewCell: UITableViewCell {
 extension ActivityTableViewCell {
     func update(_ model: HomeViewState.Activity) {
         nameLabel.text = model.name
+        
+        tel1Button.isHidden = model.tel.flatMap { $0.getSafely(index: 0) }.isNil
+        tel2Button.isHidden = model.tel.flatMap { $0.getSafely(index: 1) }.isNil
+        tel3Button.isHidden = model.tel.flatMap { $0.getSafely(index: 2) }.isNil
+        
+        mail1Button.isHidden = model.mail.flatMap { $0.getSafely(index: 0) }.isNil
+        mail2Button.isHidden = model.mail.flatMap { $0.getSafely(index: 1) }.isNil
+        mail3Button.isHidden = model.mail.flatMap { $0.getSafely(index: 2) }.isNil
+        
+        site1Button.isHidden = model.site.flatMap { $0.getSafely(index: 0) }.isNil
+        site2Button.isHidden = model.site.flatMap { $0.getSafely(index: 1) }.isNil
+        site3Button.isHidden = model.site.flatMap { $0.getSafely(index: 2) }.isNil
     }
 }
 

@@ -1,3 +1,5 @@
+import UIKit
+
 extension String: Error {}
 
 extension Optional {
@@ -13,6 +15,19 @@ extension Bool {
     }
 }
 
+extension UIView {
+    var isVisible: Bool {
+        isHidden.not
+    }
+}
+
+extension Array {
+    func getSafely(index: Int) -> Element? {
+        guard count > index else { return nil }
+        return self[index]
+    }
+}
+
 enum MultipleString: Decodable {
     case single(String)
     case multiple([String])
@@ -24,6 +39,15 @@ enum MultipleString: Decodable {
             self = .single(singleString)
         } else {
             self = .multiple(try container.decode([String].self))
+        }
+    }
+    
+    func toArray() -> [String] {
+        switch self {
+        case let .single(value):
+            return [value]
+        case let .multiple(array):
+            return array
         }
     }
 }
