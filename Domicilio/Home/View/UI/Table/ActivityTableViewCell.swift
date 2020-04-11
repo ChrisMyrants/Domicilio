@@ -59,6 +59,28 @@ class ActivityTableViewCell: UITableViewCell {
        }
     
     @IBOutlet weak var noteLabel: UILabel!
+    
+    // MARK: Actions
+    @IBAction func didTapTelephone1(_ sender: Any) {
+    }
+    @IBAction func didTapTelephone2(_ sender: Any) {
+    }
+    @IBAction func didTapTelephone3(_ sender: Any) {
+    }
+    
+    @IBAction func didTapMail1(_ sender: Any) {
+    }
+    @IBAction func didTapMail2(_ sender: Any) {
+    }
+    @IBAction func didTapMail3(_ sender: Any) {
+    }
+    
+    @IBAction func didTapSite1(_ sender: Any) {
+    }
+    @IBAction func didTapSite2(_ sender: Any) {
+    }
+    @IBAction func didTapSite3(_ sender: Any) {
+    }
 }
 
 extension ActivityTableViewCell {
