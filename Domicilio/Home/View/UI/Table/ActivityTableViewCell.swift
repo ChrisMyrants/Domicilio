@@ -1,7 +1,9 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
-
+    private var currentModel: HomeViewState.Activity?
+    
+    // MARK: IBOutlet
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var tel1Button: UIButton! {
@@ -9,13 +11,11 @@ class ActivityTableViewCell: UITableViewCell {
             UIButton.toTelephoneButton(from: tel1Button)
         }
     }
-    
     @IBOutlet weak var tel2Button: UIButton!{
         didSet {
             UIButton.toTelephoneButton(from: tel2Button)
         }
     }
-    
     @IBOutlet weak var tel3Button: UIButton!{
         didSet {
             UIButton.toTelephoneButton(from: tel3Button)
@@ -27,13 +27,11 @@ class ActivityTableViewCell: UITableViewCell {
             UIButton.toMailButton(from: mail1Button)
         }
     }
-    
     @IBOutlet weak var mail2Button: UIButton! {
         didSet {
             UIButton.toMailButton(from: mail2Button)
         }
     }
-    
     @IBOutlet weak var mail3Button: UIButton! {
         didSet {
             UIButton.toMailButton(from: mail3Button)
@@ -45,27 +43,37 @@ class ActivityTableViewCell: UITableViewCell {
             UIButton.toSiteButton(from: site1Button)
         }
     }
-    
     @IBOutlet weak var site2Button: UIButton!  {
-           didSet {
-               UIButton.toSiteButton(from: site2Button)
-           }
-       }
-    
+        didSet {
+            UIButton.toSiteButton(from: site2Button)
+        }
+    }
     @IBOutlet weak var site3Button: UIButton! {
-           didSet {
-               UIButton.toSiteButton(from: site3Button)
-           }
-       }
+        didSet {
+            UIButton.toSiteButton(from: site3Button)
+        }
+    }
     
     @IBOutlet weak var noteLabel: UILabel!
     
     // MARK: Actions
     @IBAction func didTapTelephone1(_ sender: Any) {
+        let optPhoneNumber = currentModel.flatMap { $0.tel?.first }
+        guard let phoneNumber = optPhoneNumber else { return }
+        
+        call(phoneNumber: phoneNumber)
     }
     @IBAction func didTapTelephone2(_ sender: Any) {
+        let optPhoneNumber = currentModel.flatMap { $0.tel?.getSafely(index: 1) }
+        guard let phoneNumber = optPhoneNumber else { return }
+        
+        call(phoneNumber: phoneNumber)
     }
     @IBAction func didTapTelephone3(_ sender: Any) {
+        let optPhoneNumber = currentModel.flatMap { $0.tel?.getSafely(index: 1) }
+        guard let phoneNumber = optPhoneNumber else { return }
+        
+        call(phoneNumber: phoneNumber)
     }
     
     @IBAction func didTapMail1(_ sender: Any) {
@@ -85,6 +93,8 @@ class ActivityTableViewCell: UITableViewCell {
 
 extension ActivityTableViewCell {
     func update(_ model: HomeViewState.Activity) {
+        currentModel = model
+        
         nameLabel.text = model.name
         
         tel1Button.isHidden = model.tel.flatMap { $0.getSafely(index: 0) }.isNil
@@ -103,4 +113,10 @@ extension ActivityTableViewCell {
     }
 }
 
+fileprivate extension ActivityTableViewCell {
+    func call(phoneNumber: String) {
+        guard let url = URL(string: "tel://\(phoneNumber)") else { return }
+        UIApplication.shared.open(url)
+    }
+}
 
