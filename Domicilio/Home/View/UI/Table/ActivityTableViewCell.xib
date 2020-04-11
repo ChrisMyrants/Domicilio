@@ -108,6 +108,7 @@
                 <outlet property="mail2Button" destination="sYM-o5-gcx" id="94L-Qk-Gz5"/>
                 <outlet property="mail3Button" destination="eWP-e7-T1Z" id="EIB-qV-Tmz"/>
                 <outlet property="nameLabel" destination="GcG-57-48O" id="N7t-e2-TxC"/>
+                <outlet property="noteLabel" destination="iHp-z9-aEq" id="QGq-Mz-nJH"/>
                 <outlet property="site1Button" destination="7Wd-8q-S7i" id="wFK-5u-Q2s"/>
                 <outlet property="site2Button" destination="7tK-1L-XxK" id="tPk-02-2te"/>
                 <outlet property="site3Button" destination="bBa-yu-dxB" id="MBE-Sr-PhB"/>

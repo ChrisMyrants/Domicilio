@@ -57,6 +57,8 @@ class ActivityTableViewCell: UITableViewCell {
                UIButton.toSiteButton(from: site3Button)
            }
        }
+    
+    @IBOutlet weak var noteLabel: UILabel!
 }
 
 extension ActivityTableViewCell {
@@ -74,6 +76,8 @@ extension ActivityTableViewCell {
         site1Button.isHidden = model.site.flatMap { $0.getSafely(index: 0) }.isNil
         site2Button.isHidden = model.site.flatMap { $0.getSafely(index: 1) }.isNil
         site3Button.isHidden = model.site.flatMap { $0.getSafely(index: 2) }.isNil
+        
+        noteLabel.text = model.note
     }
 }
 

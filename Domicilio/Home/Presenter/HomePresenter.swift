@@ -38,7 +38,7 @@ extension HomePresenter: HomeViewDelegate {
                                 tel: activity.tel.map { $0.toArray() },
                                 mail: activity.mail.map { $0.toArray() },
                                 site: activity.site.map { $0.toArray() }?.compactMap { URL(string: $0) },
-                                note: nil) })
+                                note: activity.note) })
             })
             
             DispatchQueue.main.async {
