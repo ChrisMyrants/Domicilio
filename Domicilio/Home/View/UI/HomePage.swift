@@ -6,7 +6,7 @@ protocol HomeViewDelegate {
 
 class HomePage: UIViewController {
     var delegate: HomeViewDelegate!
-    private var adapter = HomeTableAdapter()
+    private lazy var adapter = HomeTableAdapter(controller: self)
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {

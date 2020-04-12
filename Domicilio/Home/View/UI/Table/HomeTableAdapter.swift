@@ -1,7 +1,16 @@
 import UIKit
+import MessageUI
 
 final class HomeTableAdapter: NSObject {
+    
+    weak var controller: UIViewController?
+    
+    init(controller: UIViewController) {
+        self.controller = controller
+    }
+    
     var viewState: [HomeViewState.Grouping]?
+    
     weak var tableView: UITableView? {
         didSet {
             tableView?.dataSource = self
@@ -20,6 +29,7 @@ extension HomeTableAdapter {
     }
 }
 
+// MARK: UITableViewDataSource
 extension HomeTableAdapter: UITableViewDataSource {
     // Headers and sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,8 +61,17 @@ extension HomeTableAdapter: UITableViewDataSource {
     }
 }
 
+// MARK: UITableViewDelegate
 extension HomeTableAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+}
+
+// MARK: MFMailComposeViewControllerDelegate
+extension HomeTableAdapter: MFMailComposeViewControllerDelegate {
+    // TODO: continue from here https://www.hackingwithswift.com/example-code/uikit/how-to-send-an-email
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
     }
 }

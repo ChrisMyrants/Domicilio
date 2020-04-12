@@ -1,6 +1,8 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
+    
+    var sendEmail: ((String) -> ())?
     private var currentModel: HomeViewState.Activity?
     
     // MARK: IBOutlet
@@ -77,10 +79,22 @@ class ActivityTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapMail1(_ sender: Any) {
+        let optEmail = currentModel.flatMap { $0.mail?.first }
+        guard let email = optEmail else { return }
+        
+        sendEmail?(email)
     }
     @IBAction func didTapMail2(_ sender: Any) {
+        let optEmail = currentModel.flatMap { $0.mail?.getSafely(index: 1) }
+        guard let email = optEmail else { return }
+        
+        sendEmail?(email)
     }
     @IBAction func didTapMail3(_ sender: Any) {
+        let optEmail = currentModel.flatMap { $0.mail?.getSafely(index: 2) }
+        guard let email = optEmail else { return }
+        
+        sendEmail?(email)
     }
     
     @IBAction func didTapSite1(_ sender: Any) {
