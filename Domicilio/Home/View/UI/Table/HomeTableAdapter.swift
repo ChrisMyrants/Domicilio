@@ -58,6 +58,7 @@ extension HomeTableAdapter: UITableViewDataSource {
         
         cell.update(activity)
         cell.sendEmail = sendEmail(to:)
+        cell.selectionStyle = .none
         return cell
     }
 }
