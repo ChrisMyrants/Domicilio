@@ -55,6 +55,7 @@
 /* Begin PBXFileReference section */
 		830991932439EA7900FCEAD9 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
 		8328ED8D243BA91000F69542 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		835D21802444F37D0048A958 /* privacy_policy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacy_policy.md; sourceTree = "<group>"; };
 		836F559E24413C4300A19AA5 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		8375533B2438A46000BCF027 /* Domicilio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Domicilio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8375533E2438A46000BCF027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +121,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		835D217F2444F3630048A958 /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				8375534C2438A46100BCF027 /* Info.plist */,
+				835D21802444F37D0048A958 /* privacy_policy.md */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
 		836F559D24413C2C00A19AA5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,13 +159,13 @@
 		8375533D2438A46000BCF027 /* Domicilio */ = {
 			isa = PBXGroup;
 			children = (
+				835D217F2444F3630048A958 /* Docs */,
 				8328ED8C243BA8F900F69542 /* Services */,
 				83EF1D092439BFF600420C79 /* Home */,
 				8375533E2438A46000BCF027 /* AppDelegate.swift */,
 				837553402438A46000BCF027 /* SceneDelegate.swift */,
 				837553472438A46100BCF027 /* Assets.xcassets */,
 				837553492438A46100BCF027 /* LaunchScreen.storyboard */,
-				8375534C2438A46100BCF027 /* Info.plist */,
 				8328ED8D243BA91000F69542 /* Utilities.swift */,
 			);
 			path = Domicilio;
