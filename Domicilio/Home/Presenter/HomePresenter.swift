@@ -18,7 +18,7 @@ final class HomePresenter {
 
 extension HomePresenter: HomeViewDelegate {
     func didLoad() {
-        homePage.update(.test)
+        homePage.update(.isLoading)
         
         networkingService.call(url) { result in
             guard
@@ -26,20 +26,20 @@ extension HomePresenter: HomeViewDelegate {
                 let model = try? JSONDecoder().decode(GroupingResponseModel.self, from: data)
                 else { return }
             
-            let homeViewState = HomeViewState(
+            let homeViewState = HomeViewState.successful(HomeViewState.Successful(
                 title: "Cernusco a Domicilio",
                 groupedActivities: model.groups.map {
-                    HomeViewState.Grouping(
+                    HomeViewState.Successful.Grouping(
                         name: $0.name,
                         icon: $0.icon,
                         activities: $0.activities.map { activity in
-                            HomeViewState.Activity(
+                            HomeViewState.Successful.Activity(
                                 name: activity.name,
                                 tel: activity.tel.map { $0.toArray() },
                                 mail: activity.mail.map { $0.toArray() },
                                 site: activity.site.map { $0.toArray() }?.compactMap { URL(string: $0) },
                                 note: activity.note) })
-            })
+            }))
             
             DispatchQueue.main.async {
                 self.homePage.update(homeViewState)

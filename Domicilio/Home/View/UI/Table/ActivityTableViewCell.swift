@@ -3,7 +3,7 @@ import UIKit
 class ActivityTableViewCell: UITableViewCell {
     
     var sendEmail: ((String) -> ())?
-    private var currentModel: HomeViewState.Activity?
+    private var currentModel: HomeViewState.Successful.Activity?
     
     // MARK: IBOutlet
     @IBOutlet weak var nameLabel: UILabel!
@@ -142,7 +142,7 @@ class ActivityTableViewCell: UITableViewCell {
 }
 
 extension ActivityTableViewCell {
-    func update(_ model: HomeViewState.Activity) {
+    func update(_ model: HomeViewState.Successful.Activity) {
         currentModel = model
         
         nameLabel.text = model.name

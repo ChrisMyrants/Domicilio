@@ -9,7 +9,7 @@ final class HomeTableAdapter: NSObject {
         self.controller = controller
     }
     
-    var viewState: [HomeViewState.Grouping]?
+    var viewState: [HomeViewState.Successful.Grouping]?
     
     weak var tableView: UITableView? {
         didSet {
@@ -23,7 +23,7 @@ final class HomeTableAdapter: NSObject {
 }
 
 extension HomeTableAdapter {
-    func update(_ model: [HomeViewState.Grouping]) {
+    func update(_ model: [HomeViewState.Successful.Grouping]) {
         viewState = model
         tableView?.reloadData()
     }
