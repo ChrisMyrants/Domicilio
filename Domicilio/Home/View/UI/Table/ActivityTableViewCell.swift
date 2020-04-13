@@ -98,10 +98,46 @@ class ActivityTableViewCell: UITableViewCell {
     }
     
     @IBAction func didTapSite1(_ sender: Any) {
+        let optSite = currentModel.flatMap { $0.site?.first }
+        guard let site = optSite else { return }
+        
+        guard UIApplication.shared.canOpenURL(site) else {
+            let urlString = site.absoluteString
+            let completeURL = URL(string: "http://" + urlString)!
+            UIApplication.shared.open(completeURL)
+            
+            return
+        }
+        
+        UIApplication.shared.open(site)
     }
     @IBAction func didTapSite2(_ sender: Any) {
+        let optSite = currentModel.flatMap { $0.site?.getSafely(index: 1) }
+        guard let site = optSite else { return }
+        
+        guard UIApplication.shared.canOpenURL(site) else {
+            let urlString = site.absoluteString
+            let completeURL = URL(string: "http://" + urlString)!
+            UIApplication.shared.open(completeURL)
+            
+            return
+        }
+        
+        UIApplication.shared.open(site)
     }
     @IBAction func didTapSite3(_ sender: Any) {
+        let optSite = currentModel.flatMap { $0.site?.getSafely(index: 2) }
+        guard let site = optSite else { return }
+        
+        guard UIApplication.shared.canOpenURL(site) else {
+            let urlString = site.absoluteString
+            let completeURL = URL(string: "http://" + urlString)!
+            UIApplication.shared.open(completeURL)
+            
+            return
+        }
+        
+        UIApplication.shared.open(site)
     }
 }
 

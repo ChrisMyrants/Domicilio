@@ -71,7 +71,6 @@ extension HomeTableAdapter: UITableViewDelegate {
 
 // MARK: MFMailComposeViewControllerDelegate
 extension HomeTableAdapter: MFMailComposeViewControllerDelegate {
-    // TODO: continue from here https://www.hackingwithswift.com/example-code/uikit/how-to-send-an-email
     func sendEmail(to email: String) {
         guard
             let controller = controller,
