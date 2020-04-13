@@ -24,7 +24,10 @@ extension HomePresenter: HomeViewDelegate {
             guard
                 case let .success(data) = result,
                 let model = try? JSONDecoder().decode(GroupingResponseModel.self, from: data)
-                else { return }
+                else {
+                    DispatchQueue.main.async { self.homePage.update(.failed("Fail")) }
+                    return
+            }
             
             let homeViewState = HomeViewState.successful(HomeViewState.Successful(
                 title: "Cernusco a Domicilio",
@@ -45,5 +48,9 @@ extension HomePresenter: HomeViewDelegate {
                 self.homePage.update(homeViewState)
             }
         }
+    }
+    
+    func retry() {
+        didLoad()
     }
 }

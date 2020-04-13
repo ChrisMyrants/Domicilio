@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePage" customModule="Domicilio" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="Vlv-9y-hwa" id="Pyl-aR-p1p"/>
+                <outlet property="failureView" destination="pTD-3W-aCb" id="Z5I-ld-3tA"/>
                 <outlet property="tableView" destination="b64-V3-uY4" id="pa6-gL-RL1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,6 +23,24 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Vlv-9y-hwa">
                     <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                 </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pTD-3W-aCb">
+                    <rect key="frame" x="90" y="419" width="234" height="58.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impossibile caricare le attiività." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNI-MJ-dVa">
+                            <rect key="frame" x="0.0" y="0.0" width="234" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csc-jX-zYE">
+                            <rect key="frame" x="0.0" y="28.5" width="234" height="30"/>
+                            <state key="normal" title="Riprova"/>
+                            <connections>
+                                <action selector="didTapRiprova:" destination="-1" eventType="touchUpInside" id="3LO-ua-omm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b64-V3-uY4">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,6 +49,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="Vlv-9y-hwa" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="0PA-Rk-xhf"/>
+                <constraint firstItem="pTD-3W-aCb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="18N-Hk-7Y5"/>
+                <constraint firstItem="pTD-3W-aCb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7m8-5m-BAN"/>
                 <constraint firstItem="Vlv-9y-hwa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9XE-ZT-iNw"/>
                 <constraint firstItem="b64-V3-uY4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O4d-JK-OBL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b64-V3-uY4" secondAttribute="bottom" id="SUB-lX-Uwe"/>

@@ -2,6 +2,7 @@ import UIKit
 
 protocol HomeViewDelegate {
     func didLoad()
+    func retry()
 }
 
 class HomePage: UIViewController {
@@ -15,6 +16,11 @@ class HomePage: UIViewController {
         }
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var failureView: UIStackView!
+    
+    @IBAction func didTapRiprova(_ sender: Any) {
+        delegate.retry()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +39,23 @@ class HomePage: UIViewController {
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
             
+            failureView.isHidden = true
+            
         case .isLoading:
             tableView.isHidden = true
             
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
-        default:
-            return
+            
+            failureView.isHidden = true
+        
+        case .failed:
+            tableView.isHidden = true
+            
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+            
+            failureView.isHidden = false
         }
     }
 }
