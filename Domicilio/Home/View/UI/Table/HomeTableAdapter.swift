@@ -57,6 +57,7 @@ extension HomeTableAdapter: UITableViewDataSource {
         }
         
         cell.update(activity)
+        cell.sendEmail = sendEmail(to:)
         return cell
     }
 }
@@ -71,7 +72,19 @@ extension HomeTableAdapter: UITableViewDelegate {
 // MARK: MFMailComposeViewControllerDelegate
 extension HomeTableAdapter: MFMailComposeViewControllerDelegate {
     // TODO: continue from here https://www.hackingwithswift.com/example-code/uikit/how-to-send-an-email
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    func sendEmail(to email: String) {
+        guard
+            let controller = controller,
+            MFMailComposeViewController.canSendMail()
+            else { return }
+        let mail = MFMailComposeViewController()
+        mail.mailComposeDelegate = self
+        mail.setToRecipients([email])
         
+        controller.present(mail, animated: true)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }
