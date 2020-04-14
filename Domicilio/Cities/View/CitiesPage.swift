@@ -3,11 +3,16 @@ import UIKit
 protocol CitiesViewDelegate {
     func didLoad()
     func retry()
+    func select(city: CitiesViewState.Cities.City) -> ()
 }
 
 class CitiesPage: UIViewController {
 
-    var delegate: CitiesViewDelegate?
+    var delegate: CitiesViewDelegate? {
+        didSet {
+            adapter.selectCity = delegate?.select(city:)
+        }
+    }
     private var adapter = CitiesTableAdapter()
     
     // MARK: IBOutlet

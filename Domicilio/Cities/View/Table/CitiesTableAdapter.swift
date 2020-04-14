@@ -4,11 +4,13 @@ final class CitiesTableAdapter: NSObject {
     weak var tableView: UITableView? {
         didSet {
             tableView?.dataSource = self
+            tableView?.delegate = self
             tableView?.register(UITableViewCell.self, forCellReuseIdentifier: "CityTableViewCell")
             tableView?.reloadData()
         }
     }
     var cities: [CitiesViewState.Cities.City] = []
+    var selectCity: ((CitiesViewState.Cities.City) -> ())?
 }
 
 extension CitiesTableAdapter {
@@ -38,5 +40,9 @@ extension CitiesTableAdapter: UITableViewDataSource {
 extension CitiesTableAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCity?(cities[indexPath.row])
     }
 }

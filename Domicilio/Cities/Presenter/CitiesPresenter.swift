@@ -41,4 +41,8 @@ extension CitiesPresenter: CitiesViewDelegate {
     func retry() {
         didLoad()
     }
+    
+    func select(city: CitiesViewState.Cities.City) {
+        rootNavigationController.dismiss(animated: true)
+    }
 }

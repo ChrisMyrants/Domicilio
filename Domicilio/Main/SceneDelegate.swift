@@ -13,12 +13,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let homePage = HomePage()
         let citiesPage = CitiesPage()
-        let rootController = UINavigationController(rootViewController: citiesPage)
+        citiesPage.isModalInPresentation = true
+        
+        let rootController = UINavigationController(rootViewController: homePage)
         
         window?.rootViewController = rootController
         window?.makeKeyAndVisible()
         
         homePresenter = HomePresenter(rootNavigationController: rootController, homePage: homePage, networkingService: NetworkingService())
         citiesPresenter = CitiesPresenter(rootNavigationController: rootController, citiesPage: citiesPage, networkingService: NetworkingService())
+    
+        rootController.present(citiesPage, animated: true)
     }
 }
