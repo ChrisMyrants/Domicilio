@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CitiesPage" customModule="Domicilio" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="IBX-eo-wff" id="e1t-uW-xas"/>
+                <outlet property="descriptionLabel" destination="Uy2-Wt-ALi" id="6Ob-Xi-h2f"/>
+                <outlet property="failureStackView" destination="meP-B5-T5Z" id="tS8-in-Weq"/>
+                <outlet property="successStackView" destination="aGj-JJ-Hv2" id="TSb-tM-Ack"/>
+                <outlet property="tableView" destination="mNc-NO-Wjj" id="rW8-fu-34E"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeLabel" destination="juU-5A-lsM" id="8TK-sg-KAz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="IBX-eo-wff">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="meP-B5-T5Z">
+                    <rect key="frame" x="101" y="419" width="212" height="58.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Impossibile caricare le città." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LES-nL-CBn">
+                            <rect key="frame" x="0.0" y="0.0" width="212" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVt-zr-cyU">
+                            <rect key="frame" x="0.0" y="28.5" width="212" height="30"/>
+                            <state key="normal" title="Riprova"/>
+                            <connections>
+                                <action selector="didTapRiprova:" destination="-1" eventType="touchUpInside" id="ge3-wC-zSE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aGj-JJ-Hv2">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="juU-5A-lsM">
+                            <rect key="frame" x="186" y="0.0" width="42" height="20.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uy2-Wt-ALi">
+                            <rect key="frame" x="186" y="28.5" width="42" height="20.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mNc-NO-Wjj">
+                            <rect key="frame" x="67" y="57" width="280" height="761"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aGj-JJ-Hv2" secondAttribute="trailing" id="37Q-wm-cLk"/>
+                <constraint firstItem="meP-B5-T5Z" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Hev-bs-3Fz"/>
+                <constraint firstItem="IBX-eo-wff" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="PeS-ls-rmB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aGj-JJ-Hv2" secondAttribute="bottom" id="bCr-BV-hvI"/>
+                <constraint firstItem="aGj-JJ-Hv2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eDd-sE-yji"/>
+                <constraint firstItem="meP-B5-T5Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="iNl-BS-Ryp"/>
+                <constraint firstItem="IBX-eo-wff" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uWB-ln-C1m"/>
+                <constraint firstItem="aGj-JJ-Hv2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ylW-iU-O7Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+</document>
