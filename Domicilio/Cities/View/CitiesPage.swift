@@ -30,7 +30,7 @@ class CitiesPage: UIViewController {
 }
 
 extension CitiesPage {
-    func update(from model: CitiesViewState) {
+    func update(_ model: CitiesViewState) {
         switch model {
         case let .successful(cities):
             successStackView.isHidden = false

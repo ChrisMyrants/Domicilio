@@ -1,6 +1,6 @@
 import UIKit
 
-let url = URL(string: "https://gist.githubusercontent.com/Th3Wall/a1737863a43420319c0fea4515245430/raw/CernuscoDomicilio.json")!
+fileprivate let url = URL(string: "https://gist.githubusercontent.com/Th3Wall/a1737863a43420319c0fea4515245430/raw/CernuscoDomicilio.json")!
 
 final class HomePresenter {
     var rootNavigationController: UINavigationController

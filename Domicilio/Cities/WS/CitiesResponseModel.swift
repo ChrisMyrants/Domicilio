@@ -4,7 +4,7 @@ struct CitiesResponseModel: Decodable {
     var cities: [City]
     
     struct City: Decodable {
-        var city: String
-        var url: URL
+        var name: String
+        var url: String
     }
 }
