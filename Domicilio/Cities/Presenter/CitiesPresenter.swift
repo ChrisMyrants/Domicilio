@@ -46,6 +46,10 @@ extension CitiesPresenter: CitiesViewDelegate {
     
     func select(city: CitiesViewState.Cities.City) {
         rootNavigationController.dismiss(animated: true)
+        
+        UserDefaults.standard.set(city.name, forKey: "city")
+        UserDefaults.standard.set(city.url, forKey: "url")
+        
         selectedCity(city.name, city.url)
     }
 }

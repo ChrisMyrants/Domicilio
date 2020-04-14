@@ -33,6 +33,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 self.homePresenter.load(city: cityName, with: cityURL)
         })
     
-        rootController.present(citiesPage, animated: true)
+        guard
+            let storedCity = UserDefaults.standard.string(forKey: "city"),
+            let storedURL = UserDefaults.standard.url(forKey: "url") else {
+                rootController.present(citiesPage, animated: true)
+                return
+        }
+        
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            self.homePresenter.load(city: storedCity, with: storedURL)
+        }
     }
 }
