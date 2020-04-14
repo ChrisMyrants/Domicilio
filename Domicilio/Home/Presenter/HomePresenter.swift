@@ -1,11 +1,14 @@
 import UIKit
 
-fileprivate let url = URL(string: "https://gist.githubusercontent.com/Th3Wall/a1737863a43420319c0fea4515245430/raw/CernuscoDomicilio.json")!
+//fileprivate let url = URL(string: "https://gist.githubusercontent.com/Th3Wall/a1737863a43420319c0fea4515245430/raw/CernuscoDomicilio.json")!
 
 final class HomePresenter {
     var rootNavigationController: UINavigationController
     var homePage: HomePage
     var networkingService: NetworkingService
+    
+    private var city: String?
+    private var url: URL?
     
     init(rootNavigationController: UINavigationController, homePage: HomePage, networkingService: NetworkingService) {
         self.rootNavigationController = rootNavigationController
@@ -16,8 +19,11 @@ final class HomePresenter {
     }
 }
 
-extension HomePresenter: HomeViewDelegate {
-    func didLoad() {
+extension HomePresenter {
+    func load(city: String, with url: URL) {
+        self.city = city
+        self.url = url
+        
         homePage.update(.isLoading)
         
         networkingService.call(url) { result in
@@ -30,7 +36,7 @@ extension HomePresenter: HomeViewDelegate {
             }
             
             let homeViewState = HomeViewState.successful(HomeViewState.Successful(
-                title: "Cernusco a Domicilio",
+                title: city + " a Domicilio",
                 groupedActivities: model.groups.map {
                     HomeViewState.Successful.Grouping(
                         name: $0.name,
@@ -49,8 +55,19 @@ extension HomePresenter: HomeViewDelegate {
             }
         }
     }
+}
+
+extension HomePresenter: HomeViewDelegate {
+    func didLoad() {
+        
+    }
     
     func retry() {
-        didLoad()
+        guard
+            let city = city,
+            let url = url
+            else { return }
+        
+        load(city: city, with: url)
     }
 }

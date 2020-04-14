@@ -6,11 +6,13 @@ final class CitiesPresenter {
     var rootNavigationController: UINavigationController
     var citiesPage: CitiesPage
     var networkingService: NetworkingService
+    var selectedCity: (String, URL) -> ()
     
-    init(rootNavigationController: UINavigationController, citiesPage: CitiesPage, networkingService: NetworkingService) {
+    init(rootNavigationController: UINavigationController, citiesPage: CitiesPage, networkingService: NetworkingService, selectedCity: @escaping (String, URL) -> ()) {
         self.rootNavigationController = rootNavigationController
         self.citiesPage = citiesPage
         self.networkingService = networkingService
+        self.selectedCity = selectedCity
         
         citiesPage.delegate = self
     }
@@ -44,5 +46,6 @@ extension CitiesPresenter: CitiesViewDelegate {
     
     func select(city: CitiesViewState.Cities.City) {
         rootNavigationController.dismiss(animated: true)
+        selectedCity(city.name, city.url)
     }
 }

@@ -20,8 +20,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = rootController
         window?.makeKeyAndVisible()
         
-        homePresenter = HomePresenter(rootNavigationController: rootController, homePage: homePage, networkingService: NetworkingService())
-        citiesPresenter = CitiesPresenter(rootNavigationController: rootController, citiesPage: citiesPage, networkingService: NetworkingService())
+        homePresenter = HomePresenter(
+            rootNavigationController: rootController,
+            homePage: homePage,
+            networkingService: NetworkingService())
+        
+        citiesPresenter = CitiesPresenter(
+            rootNavigationController: rootController,
+            citiesPage: citiesPage,
+            networkingService: NetworkingService(),
+            selectedCity: { cityName, cityURL in
+                self.homePresenter.load(city: cityName, with: cityURL)
+        })
     
         rootController.present(citiesPage, animated: true)
     }
