@@ -3,6 +3,7 @@ import UIKit
 protocol HomeViewDelegate {
     func didLoad()
     func retry()
+    func openCities()
 }
 
 class HomePage: UIViewController {
@@ -25,6 +26,12 @@ class HomePage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate.didLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "cityIcon"),
+            style: .plain,
+            target: self,
+            action: #selector(openCities))
     }
     
     
@@ -57,5 +64,11 @@ class HomePage: UIViewController {
             
             failureView.isHidden = false
         }
+    }
+}
+
+fileprivate extension HomePage {
+    @objc func openCities() {
+        delegate.openCities()
     }
 }

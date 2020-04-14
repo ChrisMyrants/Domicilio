@@ -23,7 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         homePresenter = HomePresenter(
             rootNavigationController: rootController,
             homePage: homePage,
-            networkingService: NetworkingService())
+            networkingService: NetworkingService(),
+            showCities: {
+                rootController.present(citiesPage, animated: true)
+        })
         
         citiesPresenter = CitiesPresenter(
             rootNavigationController: rootController,

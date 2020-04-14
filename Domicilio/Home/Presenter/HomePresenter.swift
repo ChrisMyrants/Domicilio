@@ -6,14 +6,16 @@ final class HomePresenter {
     var rootNavigationController: UINavigationController
     var homePage: HomePage
     var networkingService: NetworkingService
+    var showCities: () -> ()
     
     private var city: String?
     private var url: URL?
     
-    init(rootNavigationController: UINavigationController, homePage: HomePage, networkingService: NetworkingService) {
+    init(rootNavigationController: UINavigationController, homePage: HomePage, networkingService: NetworkingService, showCities: @escaping () -> ()) {
         self.rootNavigationController = rootNavigationController
         self.homePage = homePage
         self.networkingService = networkingService
+        self.showCities = showCities
         
         homePage.delegate = self
     }
@@ -69,5 +71,9 @@ extension HomePresenter: HomeViewDelegate {
             else { return }
         
         load(city: city, with: url)
+    }
+    
+    func openCities() {
+        showCities()
     }
 }
