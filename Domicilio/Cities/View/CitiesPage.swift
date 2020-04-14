@@ -8,12 +8,17 @@ protocol CitiesViewDelegate {
 class CitiesPage: UIViewController {
 
     var delegate: CitiesViewDelegate?
+    private var adapter = CitiesTableAdapter()
     
     // MARK: IBOutlet
     @IBOutlet weak var successStackView: UIStackView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            adapter.tableView = tableView
+        }
+    }
     
     @IBOutlet weak var failureStackView: UIStackView!
     
@@ -34,6 +39,9 @@ extension CitiesPage {
         switch model {
         case let .successful(cities):
             successStackView.isHidden = false
+            welcomeLabel.text = "Benvenuto in Domicilio!"
+            descriptionLabel.text = "Seleziona la tua città per scoprire quali sono le attività che offrono servizi a domicilio"
+            adapter.update(cities.cities)
             
             failureStackView.isHidden = true
             

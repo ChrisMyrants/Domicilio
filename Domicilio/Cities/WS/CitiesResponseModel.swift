@@ -5,6 +5,6 @@ struct CitiesResponseModel: Decodable {
     
     struct City: Decodable {
         var name: String
-        var url: String
+        var url: URL
     }
 }

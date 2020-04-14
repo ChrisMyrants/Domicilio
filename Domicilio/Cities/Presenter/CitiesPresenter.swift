@@ -29,11 +29,16 @@ extension CitiesPresenter: CitiesViewDelegate {
                     return
             }
             
-            print("✅ with model: \(model)")
+            DispatchQueue.main.async {
+                self.citiesPage.update(CitiesViewState
+                    .successful(.init(cities: model.cities.map { citiesResponse in
+                        .init(name: citiesResponse.name, url: citiesResponse.url)
+                    })))
+            }
         }
     }
     
     func retry() {
-        
+        didLoad()
     }
 }
