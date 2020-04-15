@@ -18,6 +18,7 @@ class HomePage: UIViewController {
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var failureView: UIStackView!
+    @IBOutlet weak var failureMessage: UILabel!
     
     @IBAction func didTapRiprova(_ sender: Any) {
         delegate.retry()
@@ -57,7 +58,7 @@ class HomePage: UIViewController {
             
             failureView.isHidden = true
         
-        case .failed:
+        case let .failed(message):
             navigationItem.title = nil
             tableView.isHidden = true
             
@@ -65,6 +66,7 @@ class HomePage: UIViewController {
             activityIndicator.stopAnimating()
             
             failureView.isHidden = false
+            failureMessage.text = message
         }
     }
 }

@@ -35,7 +35,7 @@ extension HomePresenter {
                 case let .success(data) = result,
                 let model = try? JSONDecoder().decode(GroupingResponseModel.self, from: data)
                 else {
-                    DispatchQueue.main.async { self.homePage.update(.failed("Fail")) }
+                    DispatchQueue.main.async { self.homePage.update(.failed("Impossibile caricare le attiività.")) }
                     return
             }
             
