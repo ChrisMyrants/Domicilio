@@ -59,6 +59,10 @@
         {
             "name": "Napoli",
             "url": "https://gist.githubusercontent.com/ciu8/62518e44002e5b876d16a58759701fc1/raw/napoliadomicilio.json"
+        },
+        {
+            "name": "Salerno",
+            "url": "https://gist.githubusercontent.com/cicciotto/9a299c28034a2d4b00c234e8a42da8bb/raw/salernoadomicilio.json"
         }
     ]
 }
