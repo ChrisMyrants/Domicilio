@@ -55,6 +55,10 @@
         {
             "name": "Casal di Principe",
             "url": "https://gist.githubusercontent.com/cosix/fb8255eede610c8e982524852f5c32cf/raw/CasaleADomicilio.json"
+        },
+        {
+            "name": "Napoli",
+            "url": "https://gist.githubusercontent.com/ciu8/62518e44002e5b876d16a58759701fc1/raw/napoliadomicilio.json"
         }
     ]
 }
