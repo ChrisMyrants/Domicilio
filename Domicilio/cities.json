@@ -51,6 +51,10 @@
         {
             "name": "Paderno Dugnano",
             "url": "https://gist.githubusercontent.com/CVarisco/f12ba1a65e31478b6e5a5f0f49152819/raw/PadernoDugnanoDomicilio.json"
+        },
+        {
+            "name": "Casal di Principe",
+            "url": "https://gist.githubusercontent.com/cosix/fb8255eede610c8e982524852f5c32cf/raw/CasaleADomicilio.json"
         }
     ]
 }
