@@ -27,6 +27,10 @@
         {
             "name": "Sorbolo",
             "url": "https://gist.githubusercontent.com/LorenzoCamporesi/6cdc970a45fc9a752c6d1960808434d5/raw/sorboloDomicilio.json"
+        },
+        {
+            "name": "Treviso",
+            "url": "https://gist.githubusercontent.com/ir3ne/c0b628b28c6f61300570fbdeee98730e/raw/TrevisoDomicilio.json"
         }
     ]
 }
