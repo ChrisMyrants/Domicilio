@@ -11,6 +11,10 @@
         {
             "name": "Imola",
             "url": "https://gist.githubusercontent.com/verlok/72a509409dd3835706923485eb0d1742/raw/ImolaDomicilio.json"
+        },
+        {
+            "name": "Battipaglia",
+            "url": "https://gist.githubusercontent.com/pedrozebra/37ee0d22483af49a0de28364268988bd/raw/BattipagliaDomicilio.json"
         }
     ]
 }
