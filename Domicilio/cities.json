@@ -16,5 +16,9 @@
             "name": "Battipaglia",
             "url": "https://gist.githubusercontent.com/pedrozebra/37ee0d22483af49a0de28364268988bd/raw/BattipagliaDomicilio.json"
         }
+        {
+            "name": "Loano",
+            "url": "https://gist.githubusercontent.com/N0T-A-NUMB3R/0ad1bd3191c681029ca47d2aa54b2295/raw/loanodomicilio.json"
+        }
     ]
 }
