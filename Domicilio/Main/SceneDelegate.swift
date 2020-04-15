@@ -43,7 +43,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 return
         }
         
-        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.01) {
+        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 0.1) {
             self.homePresenter.load(city: storedCity, with: storedURL)
         }
     }
