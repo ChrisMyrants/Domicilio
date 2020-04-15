@@ -20,7 +20,9 @@ final class CitiesPresenter {
 
 extension CitiesPresenter: CitiesViewDelegate {
     func didLoad() {
-        citiesPage.update(.isLoading)
+        DispatchQueue.main.async {
+            self.citiesPage.update(.isLoading)
+        }
         
         networkingService.call(url) { result in
             guard

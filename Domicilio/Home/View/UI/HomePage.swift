@@ -49,6 +49,7 @@ class HomePage: UIViewController {
             failureView.isHidden = true
             
         case .isLoading:
+            navigationItem.title = nil
             tableView.isHidden = true
             
             activityIndicator.isHidden = false
@@ -57,6 +58,7 @@ class HomePage: UIViewController {
             failureView.isHidden = true
         
         case .failed:
+            navigationItem.title = nil
             tableView.isHidden = true
             
             activityIndicator.isHidden = true

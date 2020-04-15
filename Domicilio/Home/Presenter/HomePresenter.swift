@@ -26,7 +26,9 @@ extension HomePresenter {
         self.city = city
         self.url = url
         
-        homePage.update(.isLoading)
+        DispatchQueue.main.async {
+            self.homePage.update(.isLoading)
+        }
         
         networkingService.call(url) { result in
             guard
