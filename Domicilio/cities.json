@@ -31,6 +31,10 @@
         {
             "name": "Treviso",
             "url": "https://gist.githubusercontent.com/ir3ne/c0b628b28c6f61300570fbdeee98730e/raw/TrevisoDomicilio.json"
+        },
+        {
+            "name": "Reggio Emilia",
+            "url": "https://gist.githubusercontent.com/giusecapo/05550192b8d68b10712297a7c59f23b0/raw/ReggioEmiliaDomicilio.json"
         }
     ]
 }
