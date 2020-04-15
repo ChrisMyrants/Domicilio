@@ -63,6 +63,10 @@
         {
             "name": "Salerno",
             "url": "https://gist.githubusercontent.com/cicciotto/9a299c28034a2d4b00c234e8a42da8bb/raw/salernoadomicilio.json"
+        },
+        {
+            "name": "Granarolo dell'Emilia",
+            "url": "https://gist.githubusercontent.com/cant89/2b06a2c345ab879d8f04a34202b84203/raw/granaroloDomicilio.json"
         }
     ]
 }
