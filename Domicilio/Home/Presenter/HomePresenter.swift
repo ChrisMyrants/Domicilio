@@ -39,8 +39,10 @@ extension HomePresenter {
             
             let homeViewState = HomeViewState.successful(HomeViewState.Successful(
                 title: city + " a Domicilio",
-                groupedActivities: model.groups.map {
-                    HomeViewState.Successful.Grouping(
+                groupedActivities: model.groups.compactMap {
+                    guard $0.activities.isEmpty.not else { return nil }
+                    
+                    return HomeViewState.Successful.Grouping(
                         name: $0.name,
                         icon: $0.icon,
                         activities: $0.activities.map { activity in
