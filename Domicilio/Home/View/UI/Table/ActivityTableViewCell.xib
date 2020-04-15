@@ -16,105 +16,85 @@
                 <rect key="frame" x="0.0" y="0.0" width="401" height="190"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CQc-i1-6UO">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CQc-i1-6UO">
                         <rect key="frame" x="8" y="8" width="385" height="174"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-ZX-DxX">
-                                <rect key="frame" x="0.0" y="0.0" width="385" height="98"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-57-48O">
+                                <rect key="frame" x="0.0" y="0.0" width="54" height="25.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-ZX-DxX">
+                                <rect key="frame" x="0.0" y="33.5" width="385" height="114.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcG-57-48O">
-                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="98"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DjB-kW-v8y">
-                                        <rect key="frame" x="192.5" y="0.0" width="192.5" height="98"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wI2-rP-k0D">
-                                                <rect key="frame" x="46.5" y="0.0" width="146" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-yM-Nrk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapTelephone1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G1H-AV-1zO"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-EC-hZW">
-                                                        <rect key="frame" x="50" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapTelephone2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sZB-CD-mHQ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHr-hc-xZI">
-                                                        <rect key="frame" x="100" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapTelephone3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1Op-iY-0Yu"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Us4-0p-cpq">
-                                                <rect key="frame" x="46.5" y="34" width="146" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdk-9m-C04">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapMail1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qb3-5Q-X4S"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYM-o5-gcx">
-                                                        <rect key="frame" x="50" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapMail2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tcM-PB-biT"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-e7-T1Z">
-                                                        <rect key="frame" x="100" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapMail3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="isj-M7-cwe"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DbA-1T-i7w">
-                                                <rect key="frame" x="46.5" y="68" width="146" height="30"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-8q-S7i">
-                                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapSite1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qxx-Zd-Tjv"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tK-1L-XxK">
-                                                        <rect key="frame" x="50" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapSite2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nwS-DC-DNB"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-yu-dxB">
-                                                        <rect key="frame" x="100" y="0.0" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <connections>
-                                                            <action selector="didTapSite3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ien-Gy-Ys7"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-yM-Nrk">
+                                        <rect key="frame" x="0.0" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapTelephone1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G1H-AV-1zO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-EC-hZW">
+                                        <rect key="frame" x="50" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapTelephone2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sZB-CD-mHQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHr-hc-xZI">
+                                        <rect key="frame" x="100" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapTelephone3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1Op-iY-0Yu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tdk-9m-C04">
+                                        <rect key="frame" x="150" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapMail1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qb3-5Q-X4S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYM-o5-gcx">
+                                        <rect key="frame" x="200" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapMail2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tcM-PB-biT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-e7-T1Z">
+                                        <rect key="frame" x="250" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapMail3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="isj-M7-cwe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-8q-S7i">
+                                        <rect key="frame" x="300" y="42.5" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSite1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qxx-Zd-Tjv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tK-1L-XxK">
+                                        <rect key="frame" x="350" y="42.5" width="31" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSite2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nwS-DC-DNB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBa-yu-dxB">
+                                        <rect key="frame" x="385" y="42.5" width="0.0" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSite3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ien-Gy-Ys7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHp-z9-aEq">
-                                <rect key="frame" x="0.0" y="98" width="385" height="76"/>
+                                <rect key="frame" x="0.0" y="156" width="37.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
