@@ -35,9 +35,12 @@ extension CitiesPresenter: CitiesViewDelegate {
             
             DispatchQueue.main.async {
                 self.citiesPage.update(CitiesViewState
-                    .successful(.init(cities: model.cities.map { citiesResponse in
-                        .init(name: citiesResponse.name, url: citiesResponse.url)
-                    })))
+                    .successful(.init(cities: model.cities
+                        .map { citiesResponse in
+                            .init(name: citiesResponse.name, url: citiesResponse.url) }
+                        .sorted { city1, city2 in
+                            city1.name.first! < city2.name.first! }
+                        )))
             }
         }
     }
