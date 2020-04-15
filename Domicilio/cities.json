@@ -39,6 +39,10 @@
         {
             "name": "Nocera Inferiore",
             "url": "https://gist.githubusercontent.com/giervolino-coder/9e77c2a77692f6256ee5cdfd1abcb83d/raw/3f12eaa32dbb5aae303645e6951e245d7cebfd1f/nocerainfdomicilio.json"
+        },
+        {
+            "name": "Livorno",
+            "url": "https://api.6emme.it"
         }
     ]
 }
