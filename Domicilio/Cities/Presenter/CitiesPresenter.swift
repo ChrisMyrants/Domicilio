@@ -1,6 +1,6 @@
 import UIKit
 
-fileprivate let url = URL(string: "https://raw.githubusercontent.com/ChrisMyrants/Domicilio/develop/Domicilio/cities.json")!
+fileprivate let url = URL(string: "https://gist.githubusercontent.com/ChrisMyrants/1d4fa510fe3c1038e44254c4001f448b/raw/3f61424c95032b2aae0ea5e7391951142bd7a89d/cities.json")!
 
 final class CitiesPresenter {
     var rootNavigationController: UINavigationController
