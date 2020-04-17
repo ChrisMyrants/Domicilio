@@ -8,12 +8,18 @@ protocol HomeViewDelegate {
 
 class HomePage: UIViewController {
     var delegate: HomeViewDelegate!
-    private lazy var adapter = HomeTableAdapter(controller: self)
+    private lazy var collectionAdapter = FiltersCollectionAdapter(controller: self)
+    private lazy var tableAdapter = HomeTableAdapter(controller: self)
     
     // MARK: IBOutlets
+    @IBOutlet weak var collectionView: UICollectionView! {
+        didSet {
+            collectionAdapter.collectionView = collectionView
+        }
+    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            adapter.tableView = tableView
+            tableAdapter.tableView = tableView
         }
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -42,8 +48,10 @@ class HomePage: UIViewController {
         case let .successful(value):
             navigationItem.title = value.title
             
+            collectionView.isHidden = false
+            collectionAdapter.update(value.filters)
             tableView.isHidden = false
-            adapter.update(value.filteredGroupedActivities)
+            tableAdapter.update(value.filteredGroupedActivities)
             
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
@@ -52,6 +60,8 @@ class HomePage: UIViewController {
             
         case .isLoading:
             navigationItem.title = nil
+            
+            collectionView.isHidden = true
             tableView.isHidden = true
             
             activityIndicator.isHidden = false
@@ -61,6 +71,8 @@ class HomePage: UIViewController {
         
         case let .failed(message):
             navigationItem.title = nil
+            
+            collectionView.isHidden = true
             tableView.isHidden = true
             
             activityIndicator.isHidden = true

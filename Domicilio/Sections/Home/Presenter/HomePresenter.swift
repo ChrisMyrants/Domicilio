@@ -53,8 +53,14 @@ extension HomePresenter {
                                 tel: activity.tel.map { $0.toArray() },
                                 mail: activity.mail.map { $0.toArray() },
                                 site: activity.site.map { $0.toArray() }?.compactMap { URL(string: $0) },
-                                note: activity.note) })
-            }))
+                                note: activity.note) }) },
+                filters: model.groups.map {
+                    HomeViewState.Successful.Filter(
+                        name: $0.name,
+                        icon: $0.icon,
+                        selected: false)
+                }
+                ))
             
             DispatchQueue.main.async {
                 self.homePage.update(homeViewState)

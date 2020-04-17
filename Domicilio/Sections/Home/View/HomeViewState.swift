@@ -8,13 +8,13 @@ enum HomeViewState: Equatable {
     struct Successful: Equatable {
         var title: String
         var groupedActivities: [Grouping]
-        var filters: [String] = []
+        var filters: [Filter] = []
         
         var filteredGroupedActivities: [Grouping] {
             guard filters.isEmpty.not else { return groupedActivities }
             
             return groupedActivities
-                .filter { filters.contains($0.name) }
+                .filter { filters.map(\.name).contains($0.name) }
         }
         
         struct Grouping: Equatable {
@@ -29,6 +29,12 @@ enum HomeViewState: Equatable {
             var mail: [String]?
             var site: [URL]?
             var note: String?
+        }
+        
+        struct Filter: Equatable {
+            var name: String
+            var icon: String
+            var selected: Bool
         }
     }
 }

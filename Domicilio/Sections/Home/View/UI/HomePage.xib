@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePage" customModule="Domicilio" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="Vlv-9y-hwa" id="Pyl-aR-p1p"/>
+                <outlet property="collectionView" destination="OBF-oC-TEc" id="YKW-Aa-t2J"/>
                 <outlet property="failureMessage" destination="yNI-MJ-dVa" id="hbP-dI-Nlo"/>
                 <outlet property="failureView" destination="pTD-3W-aCb" id="Z5I-ld-3tA"/>
                 <outlet property="tableView" destination="b64-V3-uY4" id="pa6-gL-RL1"/>
@@ -42,10 +43,28 @@
                         </button>
                     </subviews>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b64-V3-uY4">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eVT-tr-nUb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="OBF-oC-TEc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Z1w-nf-rMY"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p5j-MF-WBd">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b64-V3-uY4">
+                            <rect key="frame" x="0.0" y="40" width="414" height="812"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </tableView>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -53,10 +72,10 @@
                 <constraint firstItem="pTD-3W-aCb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="18N-Hk-7Y5"/>
                 <constraint firstItem="pTD-3W-aCb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7m8-5m-BAN"/>
                 <constraint firstItem="Vlv-9y-hwa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9XE-ZT-iNw"/>
-                <constraint firstItem="b64-V3-uY4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="O4d-JK-OBL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b64-V3-uY4" secondAttribute="bottom" id="SUB-lX-Uwe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="b64-V3-uY4" secondAttribute="trailing" id="eTW-06-c6Y"/>
-                <constraint firstItem="b64-V3-uY4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="o2n-of-yGK"/>
+                <constraint firstAttribute="bottom" secondItem="eVT-tr-nUb" secondAttribute="bottom" id="DVR-lb-LJF"/>
+                <constraint firstItem="eVT-tr-nUb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OSx-aE-t8v"/>
+                <constraint firstItem="eVT-tr-nUb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qDs-t5-nRw"/>
+                <constraint firstItem="eVT-tr-nUb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tEI-Aa-kGK"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="153"/>

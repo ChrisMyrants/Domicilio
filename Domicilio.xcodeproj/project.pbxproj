@@ -25,6 +25,9 @@
 		8375535E2438CB1E00BCF027 /* DomicilioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837553572438CB1E00BCF027 /* DomicilioKit.framework */; };
 		8375535F2438CB1E00BCF027 /* DomicilioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 837553572438CB1E00BCF027 /* DomicilioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		837553652438CB3B00BCF027 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837553642438CB3B00BCF027 /* Activity.swift */; };
+		839CDC222449E83A0036E535 /* FiltersCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC212449E83A0036E535 /* FiltersCollectionAdapter.swift */; };
+		839CDC252449ED9B0036E535 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839CDC232449ED9B0036E535 /* FilterCollectionViewCell.swift */; };
+		839CDC262449ED9B0036E535 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839CDC242449ED9B0036E535 /* FilterCollectionViewCell.xib */; };
 		83EEDDFD2440D1F2009F4F6F /* GroupingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EEDDFC2440D1F2009F4F6F /* GroupingResponseModel.swift */; };
 		83EF1D0D2439C04300420C79 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EF1D0B2439C04300420C79 /* HomePage.swift */; };
 		83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83EF1D0C2439C04300420C79 /* HomePage.xib */; };
@@ -82,6 +85,9 @@
 		837553592438CB1E00BCF027 /* DomicilioKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DomicilioKit.h; sourceTree = "<group>"; };
 		8375535A2438CB1E00BCF027 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		837553642438CB3B00BCF027 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		839CDC212449E83A0036E535 /* FiltersCollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionAdapter.swift; sourceTree = "<group>"; };
+		839CDC232449ED9B0036E535 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		839CDC242449ED9B0036E535 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		83EEDDFC2440D1F2009F4F6F /* GroupingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingResponseModel.swift; sourceTree = "<group>"; };
 		83EF1D0B2439C04300420C79 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		83EF1D0C2439C04300420C79 /* HomePage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePage.xib; sourceTree = "<group>"; };
@@ -251,6 +257,16 @@
 			path = DomicilioKit;
 			sourceTree = "<group>";
 		};
+		839CDC202449E7E10036E535 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				839CDC212449E83A0036E535 /* FiltersCollectionAdapter.swift */,
+				839CDC232449ED9B0036E535 /* FilterCollectionViewCell.swift */,
+				839CDC242449ED9B0036E535 /* FilterCollectionViewCell.xib */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		83EEDDFE2440D6D5009F4F6F /* WS */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				836F559D24413C2C00A19AA5 /* Extensions */,
+				839CDC202449E7E10036E535 /* Collection */,
 				83EF1D152439C96300420C79 /* Table */,
 				83EF1D0B2439C04300420C79 /* HomePage.swift */,
 				83EF1D0C2439C04300420C79 /* HomePage.xib */,
@@ -396,6 +413,7 @@
 				83EF1D0E2439C04300420C79 /* HomePage.xib in Resources */,
 				8371FAFF2445C03D008A8679 /* cities.json in Resources */,
 				8375534B2438A46100BCF027 /* LaunchScreen.storyboard in Resources */,
+				839CDC262449ED9B0036E535 /* FilterCollectionViewCell.xib in Resources */,
 				83EF1D192439C98900420C79 /* ActivityTableViewCell.xib in Resources */,
 				837553482438A46100BCF027 /* Assets.xcassets in Resources */,
 				8371FB052445C13A008A8679 /* CitiesPage.xib in Resources */,
@@ -426,6 +444,8 @@
 				837553412438A46000BCF027 /* SceneDelegate.swift in Sources */,
 				83EF1D182439C98900420C79 /* ActivityTableViewCell.swift in Sources */,
 				836F559F24413C4300A19AA5 /* UIButtonExtensions.swift in Sources */,
+				839CDC252449ED9B0036E535 /* FilterCollectionViewCell.swift in Sources */,
+				839CDC222449E83A0036E535 /* FiltersCollectionAdapter.swift in Sources */,
 				8328ED8E243BA91000F69542 /* Utilities.swift in Sources */,
 				8371FB0C2445C364008A8679 /* CitiesViewState.swift in Sources */,
 				83EF1D122439C51800420C79 /* HomePresenter.swift in Sources */,
