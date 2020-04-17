@@ -21,6 +21,8 @@ final class FiltersCollectionAdapter: NSObject {
             collectionView?.dataSource = self
             collectionView?.delegate = self
             
+            collectionView?.showsHorizontalScrollIndicator = false
+            
             collectionView?.register(
                 UINib(nibName: "FilterCollectionViewCell", bundle: nil),
                 forCellWithReuseIdentifier: FilterCollectionViewCell.identifier)
@@ -57,8 +59,9 @@ extension FiltersCollectionAdapter: UICollectionViewDataSource {
 extension FiltersCollectionAdapter: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let currentFilter = filters![indexPath.row]
-        let text = currentFilter.icon + "                 " + currentFilter.name
-        let x = text.size(withAttributes: nil)
-        return CGSize(width: x.width, height: 30)
+        let text = currentFilter.icon + "                 " + currentFilter.name // really, I have no idea why I need to add some many spaces to make this work
+        
+        return CGSize(width: text.size(withAttributes: nil).width,
+                      height: 30)
     }
 }
