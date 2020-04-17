@@ -8,6 +8,14 @@ enum HomeViewState: Equatable {
     struct Successful: Equatable {
         var title: String
         var groupedActivities: [Grouping]
+        var filters: [String] = []
+        
+        var filteredGroupedActivities: [Grouping] {
+            guard filters.isEmpty.not else { return groupedActivities }
+            
+            return groupedActivities
+                .filter { filters.contains($0.name) }
+        }
         
         struct Grouping: Equatable {
             var name: String
@@ -24,21 +32,3 @@ enum HomeViewState: Equatable {
         }
     }
 }
-
-//extension HomeViewState {
-//    static let test = HomeViewState(
-//        title: "Cernusco a Domicilio",
-//        groupedActivities: [
-//            Grouping(
-//                name: "Sport",
-//                icon: "🏀",
-//                activities: [
-//                    Activity(
-//                        name: "NBA",
-//                        tel: ["3331231231"],
-//                        mail: ["info@nba.com"],
-//                        site: [URL(string: "https://www.nba.com")!],
-//                        note: "Best sport and company in the world")
-//            ])
-//    ])
-//}

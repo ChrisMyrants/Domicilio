@@ -10,7 +10,7 @@ class HomePage: UIViewController {
     var delegate: HomeViewDelegate!
     private lazy var adapter = HomeTableAdapter(controller: self)
     
-    // MARK: IBOutlet
+    // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             adapter.tableView = tableView
@@ -20,6 +20,7 @@ class HomePage: UIViewController {
     @IBOutlet weak var failureView: UIStackView!
     @IBOutlet weak var failureMessage: UILabel!
     
+    // MARK: IBActions
     @IBAction func didTapRiprova(_ sender: Any) {
         delegate.retry()
     }
@@ -42,7 +43,7 @@ class HomePage: UIViewController {
             navigationItem.title = value.title
             
             tableView.isHidden = false
-            adapter.update(value.groupedActivities)
+            adapter.update(value.filteredGroupedActivities)
             
             activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
