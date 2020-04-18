@@ -6,7 +6,6 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     private var isFilterSelected: Bool = false {
         didSet {
-            button.isHighlighted = isFilterSelected
             if isFilterSelected {
                 button.backgroundColor = FilterCollectionViewCell.blue
                 button.setTitleColor(.white, for: .normal)
@@ -26,7 +25,6 @@ class FilterCollectionViewCell: UICollectionViewCell {
             button.layer.cornerRadius = 15
             button.layer.borderWidth = 1
             button.layer.borderColor = FilterCollectionViewCell.blue.cgColor
-            button.isHighlighted = true
         }
     }
     
