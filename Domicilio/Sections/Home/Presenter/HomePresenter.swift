@@ -10,6 +10,7 @@ final class HomePresenter {
     
     private var city: String?
     private var url: URL?
+    private var currentViewState: HomeViewState?
     
     init(rootNavigationController: UINavigationController, homePage: HomePage, networkingService: NetworkingService, showCities: @escaping () -> ()) {
         self.rootNavigationController = rootNavigationController
@@ -28,6 +29,7 @@ extension HomePresenter {
         
         DispatchQueue.main.async {
             self.homePage.update(.isLoading)
+            self.currentViewState = .isLoading
         }
         
         networkingService.call(url) { result in
@@ -35,7 +37,7 @@ extension HomePresenter {
                 case let .success(data) = result,
                 let model = try? JSONDecoder().decode(GroupingResponseModel.self, from: data)
                 else {
-                    DispatchQueue.main.async { self.homePage.update(.failed("Impossibile caricare le attiività.")) }
+                    DispatchQueue.main.async { self.homePage.update(.failed("Impossibile caricare le attività.")) }
                     return
             }
             
@@ -64,6 +66,7 @@ extension HomePresenter {
             
             DispatchQueue.main.async {
                 self.homePage.update(homeViewState)
+                self.currentViewState = homeViewState
             }
         }
     }
@@ -85,5 +88,35 @@ extension HomePresenter: HomeViewDelegate {
     
     func openCities() {
         showCities()
+    }
+    
+    func select(filter: HomeViewState.Successful.Filter) {
+        guard let viewState = currentViewState else { return }
+        switch viewState {
+        case let .successful(state):
+            let updatedFilters = state.filters.reduce([HomeViewState.Successful.Filter]()) { acc, current in
+                var m_acc = acc
+                if current.name == filter.name {
+                    m_acc.append(HomeViewState.Successful.Filter(
+                        name: current.name,
+                        icon: current.icon,
+                        selected: current.selected.not))
+                } else {
+                    m_acc.append(current)
+                }
+                
+                return m_acc
+            }
+            DispatchQueue.main.async {
+                let updatedState = HomeViewState.successful(.init(
+                    title: state.title,
+                    groupedActivities: state.groupedActivities,
+                    filters: updatedFilters))
+                self.homePage.update(updatedState)
+                self.currentViewState = updatedState
+            }
+        default:
+            return
+        }
     }
 }

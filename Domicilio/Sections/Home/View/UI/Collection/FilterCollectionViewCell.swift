@@ -17,6 +17,9 @@ class FilterCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var model: HomeViewState.Successful.Filter?
+    var selectFilter: ((HomeViewState.Successful.Filter) -> ())?
+    
     // MARK: IBOutlets
     @IBOutlet weak var button: UIButton! {
         didSet {
@@ -29,12 +32,20 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     // MARK: IBActions
     @IBAction func didTapButton(_ sender: UIButton) {
-        isFilterSelected = !isFilterSelected
+//        isFilterSelected = !isFilterSelected
+        guard
+            let model = model,
+            let selectFilter = selectFilter
+            else { return }
+        
+        selectFilter(model)
     }
 }
 
 extension FilterCollectionViewCell {
     func update(_ model: HomeViewState.Successful.Filter) {
+        self.model = model
+        
         button.setTitle(model.icon + " " + model.name, for: .normal)
         isFilterSelected = model.selected
     }

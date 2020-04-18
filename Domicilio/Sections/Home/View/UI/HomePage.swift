@@ -4,6 +4,7 @@ protocol HomeViewDelegate {
     func didLoad()
     func retry()
     func openCities()
+    func select(filter: HomeViewState.Successful.Filter)
 }
 
 class HomePage: UIViewController {
@@ -87,5 +88,11 @@ class HomePage: UIViewController {
 fileprivate extension HomePage {
     @objc func openCities() {
         delegate.openCities()
+    }
+}
+
+extension HomePage {
+    func select(filter: HomeViewState.Successful.Filter) {
+        delegate.select(filter: filter)
     }
 }

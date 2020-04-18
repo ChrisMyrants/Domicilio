@@ -11,10 +11,14 @@ enum HomeViewState: Equatable {
         var filters: [Filter] = []
         
         var filteredGroupedActivities: [Grouping] {
-            guard filters.isEmpty.not else { return groupedActivities }
+            guard
+                filters.isEmpty.not,
+                filters.filter(\.selected).isEmpty.not
+                else { return groupedActivities }
             
-            return groupedActivities
-                .filter { filters.map(\.name).contains($0.name) }
+            return filters
+                .filter { $0.selected }
+                .compactMap { filter in groupedActivities.first { $0.name == filter.name } }
         }
         
         struct Grouping: Equatable {
