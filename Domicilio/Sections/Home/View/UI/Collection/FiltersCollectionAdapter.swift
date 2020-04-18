@@ -36,8 +36,28 @@ final class FiltersCollectionAdapter: NSObject {
 
 extension FiltersCollectionAdapter {
     func update(_ model: [HomeViewState.Successful.Filter]) {
+        guard
+            let oldFilters = filters,
+            oldFilters.count == model.count
+            else {
+                self.filters = model
+                collectionView?.reloadData()
+                return
+        }
+        
+        let indexes = Array(0...(model.count - 1))
+        let coupledModels = zip(oldFilters, model).map { $0 }
+        let changedFiltersIndexes = zip(coupledModels, indexes)
+            .filter {
+                let (tuple, _) = $0
+                let (old, new) = tuple
+                return (old == new).not }
+            .map { $0.1 }
+            .map { IndexPath(item: $0, section: 0) }
+        
         filters = model
-        collectionView?.reloadData()
+        
+        collectionView?.reloadItems(at: changedFiltersIndexes)
     }
     
     func select(filter: HomeViewState.Successful.Filter) {

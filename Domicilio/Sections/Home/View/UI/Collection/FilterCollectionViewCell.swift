@@ -32,7 +32,6 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     // MARK: IBActions
     @IBAction func didTapButton(_ sender: UIButton) {
-//        isFilterSelected = !isFilterSelected
         guard
             let model = model,
             let selectFilter = selectFilter
