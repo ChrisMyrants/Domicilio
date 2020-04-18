@@ -41,9 +41,13 @@ extension HomePresenter {
                     return
             }
             
+            let orderedGroups = model
+                .groups
+                .sorted { group1, group2 in group1.name.first! < group2.name.first! }
+            
             let homeViewState = HomeViewState.successful(HomeViewState.Successful(
                 title: city + " a Domicilio",
-                groupedActivities: model.groups.compactMap {
+                groupedActivities: orderedGroups.compactMap {
                     guard $0.activities.isEmpty.not else { return nil }
                     
                     return HomeViewState.Successful.Grouping(
@@ -56,7 +60,7 @@ extension HomePresenter {
                                 mail: activity.mail.map { $0.toArray() },
                                 site: activity.site.map { $0.toArray() }?.compactMap { URL(string: $0) },
                                 note: activity.note) }) },
-                filters: model.groups.map {
+                filters: orderedGroups.map {
                     HomeViewState.Successful.Filter(
                         name: $0.name,
                         icon: $0.icon,
